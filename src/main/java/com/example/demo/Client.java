@@ -7,9 +7,9 @@ import org.springframework.ws.soap.client.core.SoapActionCallback;
 
 public class Client extends WebServiceGatewaySupport {
 
-    public GetUniversityResponse getUniversityResponse(String movieName){
+    public GetUniversityResponse getUniversityResponse(String universityName){
         GetUniversityRequest request = new  GetUniversityRequest();
-        request.setName(movieName);
+        request.setName(universityName);
 
         GetUniversityResponse response = (GetUniversityResponse) getWebServiceTemplate()
                 .marshalSendAndReceive("http://localhost:7000/ws",
@@ -18,16 +18,5 @@ public class Client extends WebServiceGatewaySupport {
 
         return response;
     }
-
-//    public GetAllUniversitiesResponse  getAllMoviesResponse(){
-//        GetAllMoviesRequest request = new GetAllMoviesRequest();
-//
-//        GetAllMoviesResponse response = (GetAllMoviesResponse) getWebServiceTemplate()
-//                .marshalSendAndReceive("http://localhost:8080/ws",
-//                        request,
-//                        new SoapActionCallback("http://localhost:8080/ws"));
-//
-//        return response;
-//    }
 
 }
