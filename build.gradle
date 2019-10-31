@@ -15,7 +15,7 @@ repositories {
 task genJaxb {
     ext.sourcesDir = "${buildDir}/generated-sources/jaxb"
     ext.classesDir = "${buildDir}/classes/jaxb"
-    ext.schema = "src/main/resources/universities.xsd" //NAME OF YOUR XSD FILE
+    ext.schema = "http://localhost:7050/ws/universities.wsdl" //NAME OF YOUR XSD FILE
 
     outputs.dir classesDir
 
